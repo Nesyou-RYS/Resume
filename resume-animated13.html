@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رزومه یونس ابراهیمی</title>
+<script>document.documentElement.classList.add("js")</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Vazirmatn', 'sans-serif'] },
+        colors: {
+          azure: '#1591DC',
+          rose:  '#2C5EAD',
+          amber: '#4BB8FA',
+          lemon: '#C4E2F5',
+          ink:   '#14284b',
+          mist:  '#f3f9fe'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Vazirmatn', sans-serif; }
+  .blob   { border-radius: 62% 38% 54% 46% / 48% 58% 42% 52%; }
+  .blob-2 { border-radius: 40% 60% 48% 52% / 56% 44% 56% 44%; }
+  .blob-3 { border-radius: 30% 70% 62% 38% / 55% 35% 65% 45%; }
+  .card-o { border-radius: 2rem 2.6rem 2rem 2.6rem / 2.4rem 2rem 2.4rem 2rem; }
+  .shadow-o { box-shadow: 0 24px 50px -22px rgba(21,145,220,.5), 0 8px 20px -12px rgba(20,40,75,.2); }
+  .marker { background: linear-gradient(transparent 52%, #C4E2F5 52%, #C4E2F5 92%, transparent 92%); padding: 0 .45rem; border-radius: 1.1rem .4rem 1.3rem .5rem; }
+  .float  { animation: float 10s ease-in-out infinite; }
+  .float2 { animation: float 13s ease-in-out infinite reverse; }
+  @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(4deg); } }
+  .rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes rise { from { opacity:0; transform: translateY(18px); } to { opacity:1; transform:none; } }
+  @media print {
+    body { background:#fff !important; }
+    .no-print { display:none !important; }
+    .sheet { box-shadow:none !important; margin:0 !important; }
+    * { -webkit-print-color-adjust:exact; print-color-adjust:exact; animation:none !important; }
+  }
+
+  /* ================= ANIMATION LAYER ================= */
+  .js .reveal { opacity:0; transform: translateY(34px) scale(.98); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+  .js .reveal-l { transform: translateX(-38px) scale(.98); }
+  .js .reveal.in { opacity:1; transform:none; }
+  .js .pop { opacity:0; transform: scale(.55) translateY(10px); }
+  .js .reveal.in .pop { opacity:1; transform:none; transition: opacity .5s, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: calc(var(--i,0) * 55ms + 250ms); }
+  .js .reveal.in .pop:hover { transform: translateY(-3px) scale(1.06); transition-delay:0s; }
+  .js .marker { background-repeat:no-repeat; background-position:right; background-size:0% 100%; transition: background-size .9s cubic-bezier(.2,.8,.2,1) .3s; }
+  .js .reveal.in .marker { background-size:100% 100%; }
+  @keyframes morph {
+    0%,100% { border-radius: 62% 38% 54% 46% / 48% 58% 42% 52%; }
+    33%     { border-radius: 40% 60% 48% 52% / 56% 44% 56% 44%; }
+    66%     { border-radius: 30% 70% 62% 38% / 55% 35% 65% 45%; }
+  }
+  .blob, .blob-2, .blob-3 { animation: morph 16s ease-in-out infinite; }
+  .blob.float, .blob-2.float, .blob-3.float   { animation: float 10s ease-in-out infinite, morph 16s ease-in-out infinite; }
+  .blob.float2, .blob-2.float2, .blob-3.float2 { animation: float 13s ease-in-out infinite reverse, morph 19s ease-in-out infinite; }
+  .absolute[class*="blob"] { transition: translate .6s cubic-bezier(.2,.8,.2,1); }
+  .card-o { transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
+  .card-o:hover { transform: translateY(-5px) rotate(-.4deg); box-shadow: 0 22px 40px -22px rgba(21,145,220,.55); }
+  .live-dot { display:inline-block; width:.55rem; height:.55rem; margin-inline-end:.45rem; border-radius:9999px; background:#1591DC; animation: ping-dot 1.8s ease-out infinite; }
+  @keyframes ping-dot { 0% { box-shadow:0 0 0 0 rgba(21,145,220,.6); } 100% { box-shadow:0 0 0 .6rem rgba(21,145,220,0); } }
+  .leaf path:first-child { stroke-dasharray:180; stroke-dashoffset:180; animation: draw 2.2s .5s ease-out forwards; }
+  .leaf g path { transform-box: fill-box; transform-origin: 0% 100%; transform: scale(0); animation: grow .8s cubic-bezier(.34,1.56,.64,1) forwards; }
+  .leaf g path:nth-child(1) { animation-delay:1.0s; } .leaf g path:nth-child(2) { animation-delay:1.3s; }
+  .leaf g path:nth-child(3) { animation-delay:1.6s; } .leaf g path:nth-child(4) { animation-delay:1.9s; }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  @keyframes grow { to { transform: scale(1); } }
+  label[for="photoInput"] { transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
+  label[for="photoInput"]:hover { transform: rotate(-6deg) scale(1.06); }
+  #progress { transform: scaleX(0); transform-origin: right; background: linear-gradient(270deg,#1591DC,#4BB8FA,#C4E2F5); }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal, .js .pop { opacity:1 !important; transform:none !important; transition:none !important; }
+    .js .marker { background-size:100% 100% !important; }
+    *, *::before, *::after { animation:none !important; }
+    .leaf path:first-child { stroke-dashoffset:0; } .leaf g path { transform:none; }
+  }
+  @media print {
+    .js .reveal, .js .pop { opacity:1 !important; transform:none !important; }
+    .js .marker { background-size:100% 100% !important; }
+    .leaf path:first-child { stroke-dashoffset:0 !important; } .leaf g path { transform:none !important; }
+    .card-o:hover { transform:none; }
+  }
+
+  /* ================= 3D SHAPES ================= */
+  .absolute.blob, .absolute.blob-2, .absolute.blob-3,
+  div.blob, div.blob-2, div.blob-3 {
+    background-image: radial-gradient(circle at 28% 24%, rgba(255,255,255,.75) 0%, rgba(255,255,255,.25) 22%, rgba(255,255,255,0) 52%),
+                      radial-gradient(circle at 72% 80%, rgba(20,40,75,.30) 0%, rgba(20,40,75,0) 55%);
+    box-shadow: inset -10px -14px 26px rgba(20,40,75,.30),
+                inset 8px 10px 22px rgba(255,255,255,.55),
+                0 28px 34px -18px rgba(20,40,75,.45);
+  }
+  /* faint decorative shapes need a little more body to read as solid */
+  .absolute.blob-2.bg-azure\/10 { background-color: rgba(21,145,220,.22); }
+  .absolute.blob-3.bg-rose\/10  { background-color: rgba(44,94,173,.22); }
+  .absolute.blob.bg-amber\/40   { background-color: rgba(75,184,250,.55); }
+
+  /* avatar becomes a glossy 3D pebble */
+  label[for="photoInput"] { box-shadow: inset -8px -10px 18px rgba(20,40,75,.35), inset 6px 8px 14px rgba(255,255,255,.6), 0 24px 30px -14px rgba(20,40,75,.55); }
+  label[for="photoInput"] > span { box-shadow: inset 0 6px 14px rgba(0,0,0,.45), inset 0 -4px 10px rgba(255,255,255,.12); }
+
+  .leaf { filter: drop-shadow(3px 6px 4px rgba(20,40,75,.28)); }
+
+  /* floating now tilts in perspective */
+  @keyframes float {
+    0%,100% { transform: perspective(700px) translateY(0) rotateX(0) rotateY(0) rotate(0); }
+    50%     { transform: perspective(700px) translateY(-14px) rotateX(10deg) rotateY(-12deg) rotate(4deg); }
+  }
+  @media print {
+    .absolute.blob, .absolute.blob-2, .absolute.blob-3, div.blob, div.blob-2, div.blob-3 { box-shadow:none; }
+  }
+</style>
+</head>
+<body class="bg-mist text-ink antialiased min-h-screen">
+<div id="progress" class="no-print fixed top-0 right-0 h-1 w-full z-[60]"></div>
+
+<button onclick="window.print()" class="no-print fixed top-3 left-3 md:top-4 md:left-4 z-50 bg-rose hover:brightness-110 text-white text-xs md:text-sm font-semibold px-3.5 py-1.5 md:px-5 md:py-2.5 rounded-full shadow-lg transition">
+  ذخیره / چاپ PDF
+</button>
+
+<main class="sheet shadow-o max-w-5xl mx-auto my-0 sm:my-8 bg-white rounded-none sm:rounded-[2.8rem] overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_320px]">
+
+  <!-- ============ MAIN ============ -->
+  <section class="order-2 md:order-1 relative p-6 md:p-12 space-y-9 md:space-y-11 overflow-hidden">
+    <div class="absolute -top-20 right-1/4 w-64 h-64 bg-amber/40 blob float"></div>
+    <div class="absolute top-[48%] -left-20 w-52 h-52 bg-azure/10 blob-2 float2"></div>
+    <div class="absolute -bottom-16 right-10 w-44 h-44 bg-rose/10 blob-3"></div>
+
+    <!-- botanical line decoration -->
+    <svg class="hidden sm:block absolute top-8 left-8 w-24 opacity-25 float2 leaf" viewBox="0 0 120 160" aria-hidden="true">
+      <path d="M60 156 C57 110 70 70 62 8" fill="none" stroke="#2C5EAD" stroke-width="3" stroke-linecap="round"/>
+      <g fill="#1591DC">
+        <path d="M60 122 C30 117 18 97 14 80 C38 82 56 96 60 122Z"/>
+        <path d="M61 96 C90 93 102 75 106 59 C82 61 64 73 61 96Z"/>
+        <path d="M60 71 C34 67 24 51 20 37 C42 39 58 51 60 71Z"/>
+        <path d="M62 46 C86 43 96 29 100 15 C80 17 65 27 62 46Z"/>
+      </g>
+    </svg>
+
+    <header class="relative reveal hidden md:block">
+      <div class="flex flex-wrap gap-2 mb-4 text-sm font-semibold">
+        <span class="px-4 py-1.5 rounded-full bg-lemon text-ink"><i class="live-dot"></i>در جستجوی فعال برای شغل</span>
+        <span class="px-4 py-1.5 rounded-full bg-amber text-ink">همکاری پاره‌وقت</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">یونس ابراهیمی</h1>
+      <p class="mt-3 text-xl md:text-2xl font-bold text-azure">مهندس صنایع <span class="text-rose">·</span> برنامه‌نویس</p>
+    </header>
+
+    <div class="relative reveal" style="transition-delay:.08s">
+      <h2 class="text-xl font-extrabold mb-3"><span class="marker">درباره من</span></h2>
+      <div class="leading-8 text-ink/80 bg-azure/[.07] card-o p-6 space-y-3">
+        <p>
+          مهندس صنایع و توسعه‌دهنده نرم‌افزار با تمرکز بر تحلیل داده، مدیریت و کنترل پروژه و طراحی راهکارهای نرم‌افزاری. علاقه‌مند به تبدیل مسائل واقعی کسب‌وکار و پروژه‌ها به فرآیندها، مدل‌های داده و ابزارهای کاربردی که به تصمیم‌گیری بهتر و افزایش بهره‌وری کمک می‌کنند.
+        </p>
+        <p>
+          دارای تجربه در کنترل پروژه، طراحی پایگاه داده، SQL، Power BI، توسعه وب و مدل‌سازی فرآیندها و علاقه‌مند به ساخت سیستم‌های یکپارچه برای مدیریت پروژه و اطلاعات سازمانی. رویکردم ترکیبی از تفکر مهندسی، تحلیل داده و توسعه نرم‌افزار است؛ با هدف ایجاد راهکارهایی که هم از نظر فنی قابل اجرا باشند و هم در عمل برای سازمان ارزش ایجاد کنند.
+        </p>
+      </div>
+    </div>
+
+    <div class="relative reveal" style="transition-delay:.16s">
+      <h2 class="text-xl font-extrabold mb-4"><span class="marker">سوابق شغلی</span></h2>
+      <div class="bg-white card-o p-6 border-2 border-ink/10 shadow-[0_14px_30px_-16px_rgba(44,94,173,.5)]">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h3 class="font-bold text-lg">کارشناس کنترل پروژه</h3>
+          <span class="text-sm font-semibold text-rose">اردیبهشت ۱۴۰۵ تا اکنون</span>
+        </div>
+        <p class="mt-1 text-ink/70 font-medium">شرکت دانش‌آفرینان نوآورد</p>
+        <div class="mt-4 flex flex-wrap items-center gap-2.5 text-sm font-semibold">
+          <span class="px-3.5 py-1 rounded-full bg-amber/60">اراک</span>
+          <a href="https://daneshafarinan.com/" target="_blank" rel="noopener" dir="ltr" class="px-3.5 py-1 rounded-full bg-azure/15 text-azure hover:bg-azure hover:text-white transition">daneshafarinan.com ↗</a>
+          <span class="px-3.5 py-1 rounded-full bg-rose text-white">در حال همکاری</span>
+        </div>
+
+        <p class="mt-5 leading-8 text-ink/80">برنامه‌ریزی، زمان‌بندی و کنترل پروژه با <strong dir="ltr">MS Project</strong>، هزینه‌یابی و مقایسه هزینه واقعی با بودجه، تهیه گزارش‌های دوره‌ای و پیگیری تأخیرات و مسائل اجرایی، و همکاری در بهبود فرآیندهای <strong>کنترل پروژه و مدیریت اطلاعات</strong>.</p>
+
+        <p class="mt-5 mb-3 text-sm font-bold text-azure">پروژه‌ها و مسئولیت‌ها در این نقش</p>
+        <div class="space-y-4 border-r-4 border-lemon pr-4">
+        <div class="bg-azure/[.07] rounded-[1.6rem] p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h4 class="font-bold">کارشناس پروژه کوپل دیزل ژنراتور</h4>
+          <span class="text-sm font-semibold text-rose">۳۱ اردیبهشت تا ۲۲ خرداد</span>
+        </div>
+        </div>
+        <div class="bg-azure/[.07] rounded-[1.6rem] p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h4 class="font-bold">کارشناس پروژه کوپل دیزل ژنراتور</h4>
+          <span class="text-sm font-semibold text-rose">۱ شهریور تا ۱۰ آبان</span>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative reveal" style="transition-delay:.24s">
+      <h2 class="text-xl font-extrabold mb-4"><span class="marker">تحصیلات</span></h2>
+      <div class="space-y-4">
+        <div class="flex gap-4 bg-white card-o p-6 border-2 border-ink/10">
+          <div class="shrink-0 w-12 h-12 bg-azure blob flex items-center justify-center text-xl">🎓</div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-bold text-lg">مهندسی صنایع</h3>
+              <span class="text-sm font-semibold text-azure">مهر ۱۴۰۲ تا اکنون</span>
+            </div>
+            <p class="text-ink/70 mt-1">کارشناسی · دانشگاه دولتی محلات</p>
+          </div>
+        </div>
+        <div class="flex gap-4 bg-white card-o p-6 border-2 border-ink/10">
+          <div class="shrink-0 w-12 h-12 bg-amber blob-2 flex items-center justify-center text-xl">📐</div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-bold text-lg">ریاضی</h3>
+              <span class="text-sm font-semibold text-azure">مهر ۱۳۸۹ تا دی ۱۴۰۱</span>
+            </div>
+            <p class="text-ink/70 mt-1">دیپلم · دبیرستان شهید بهشتی اراک، دوره دوم · اراک</p>
+            <span class="inline-block mt-2 px-3 py-0.5 rounded-full bg-lemon text-xs font-bold">معدل ۱۵</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative reveal" style="transition-delay:.32s">
+      <h2 class="text-xl font-extrabold mb-4"><span class="marker">مهارت‌های فنی</span></h2>
+      <div class="flex flex-wrap gap-2.5" id="skills"></div>
+    </div>
+
+    <div class="relative reveal" style="transition-delay:.4s">
+      <h2 class="text-xl font-extrabold mb-4"><span class="marker">تکنولوژی‌های مورد علاقه برای کار</span></h2>
+      <div class="flex flex-wrap gap-2.5" dir="ltr">
+        <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">MS Project</span>
+        <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">Power BI</span>
+        <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">Excel</span>
+        <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">Python</span>
+        <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">SQL</span>
+      </div>
+    </div>
+
+    <div class="relative reveal" style="transition-delay:.48s">
+      <h2 class="text-xl font-extrabold mb-4"><span class="marker">پروژه‌ها</span></h2>
+      <div class="space-y-4">
+
+        <div class="bg-white card-o p-6 border-2 border-ink/10">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-bold text-lg">طراحی وب‌سایت</h3>
+            <span class="text-sm font-semibold text-rose">۸ اسفند ۱۴۰۴</span>
+          </div>
+          <p class="mt-2 leading-8 text-ink/75">طراحی وب‌سایت شرکتی، هلدینگ دانا</p>
+          <div class="mt-4 flex flex-wrap items-center gap-2.5 text-sm font-semibold">
+            <a href="https://daneshafarinan.com/" target="_blank" rel="noopener" class="px-3.5 py-1 rounded-full bg-azure/15 text-azure hover:bg-azure hover:text-white transition">صفحه اصلی - دانش‌آفرینان نوآور ↗</a>
+            <span class="px-3.5 py-1 rounded-full bg-amber/60 text-ink" dir="ltr">WordPress</span>
+          </div>
+        </div>
+
+        <div class="bg-white card-o p-6 border-2 border-ink/10">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-bold text-lg">طراحی سیستم اطلاعاتی</h3>
+            <span class="text-sm font-semibold text-rose">۱ شهریور ۱۴۰۵</span>
+          </div>
+          <p class="mt-2 leading-8 text-ink/75">طراحی و توسعه یک سیستم اطلاعات مدیریت پروژه (PMIS) با هدف یکپارچه‌سازی اطلاعات پروژه، قراردادها، منابع انسانی، هزینه‌ها، درآمدها و مسائل پروژه. طراحی ساختار پایگاه داده و روابط بین موجودیت‌ها و آماده‌سازی داده‌ها برای تحلیل و گزارش‌گیری مدیریتی در Power BI.</p>
+          <div class="mt-4 flex flex-wrap gap-2.5 text-sm font-semibold" dir="ltr">
+            <span class="px-3.5 py-1 rounded-full bg-amber/60 text-ink">SQL</span>
+            <span class="px-3.5 py-1 rounded-full bg-amber/60 text-ink">Power BI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="order-1 md:order-2 relative bg-azure text-white p-6 pb-14 md:p-8 md:pr-12 space-y-6 md:space-y-8 overflow-hidden">
+    <div class="absolute -top-14 -left-14 w-56 h-56 bg-lemon/90 blob float"></div>
+    <div class="absolute top-[38%] -right-24 w-56 h-56 bg-rose/90 blob-2 float2"></div>
+    <div class="absolute -bottom-20 -left-12 w-64 h-64 bg-amber blob-3 float"></div>
+
+    <!-- organic wave edges: side wave on desktop, bottom wave on mobile -->
+    <svg class="hidden md:block absolute inset-y-0 right-0 h-full w-10" viewBox="0 0 40 800" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#fff" d="M40 0 C8 70 36 150 12 230 S0 390 22 470 S38 630 10 710 S22 780 40 800 Z"/>
+    </svg>
+    <svg class="md:hidden absolute bottom-0 left-0 w-full h-8" viewBox="0 0 400 32" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#fff" d="M0 32 V16 C50 0 110 30 200 14 S340 2 400 16 V32 Z"/>
+    </svg>
+
+    <!-- Avatar -->
+    <div class="relative flex items-center gap-4 md:gap-0 md:justify-center md:pt-4">
+      <div class="relative shrink-0">
+        <label for="photoInput" title="آپلود عکس" class="group block w-24 h-24 md:w-40 md:h-40 blob bg-gradient-to-br from-rose via-amber to-lemon p-1.5 shadow-xl cursor-pointer">
+          <span class="relative block w-full h-full blob bg-ink overflow-hidden">
+            <span id="avatarInitials" class="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl font-extrabold text-lemon">ی‌ا</span>
+            <img id="avatarImg" alt="عکس پروفایل" class="hidden absolute inset-0 w-full h-full object-cover">
+            <span class="no-print absolute inset-0 flex flex-col items-center justify-center gap-1 bg-ink/60 text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h1.5l1.2-2h8.6l1.2 2H19a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              آپلود عکس
+            </span>
+          </span>
+        </label>
+        <input id="photoInput" type="file" accept="image/*" class="hidden">
+        <button id="photoRemove" type="button" title="حذف عکس" class="no-print hidden absolute bottom-1 left-1 w-8 h-8 rounded-full bg-white text-rose text-sm font-bold items-center justify-center shadow-md hover:scale-105 transition">✕</button>
+      </div>
+
+      <!-- Name (mobile only, sits right next to the photo) -->
+      <div class="md:hidden relative min-w-0 flex-1">
+        <h1 class="text-2xl font-extrabold leading-tight">یونس ابراهیمی</h1>
+        <p class="mt-1 text-sm font-bold text-lemon">مهندس صنایع · برنامه‌نویس</p>
+        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-lemon text-ink text-xs font-bold"><i class="live-dot"></i>در جستجوی فعال برای شغل</span>
+      </div>
+    </div>
+
+    <div class="relative">
+      <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">اطلاعات تماس</span></h3>
+      <ul class="space-y-2.5 text-sm font-medium">
+        <li class="flex items-center gap-3 bg-ink/25 backdrop-blur-sm rounded-[1.4rem] px-4 py-2.5">
+          <svg class="w-4 h-4 shrink-0 text-lemon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+          مرکزی، اراک
+        </li>
+        <li class="flex items-center gap-3 bg-ink/25 backdrop-blur-sm rounded-[1.4rem] px-4 py-2.5">
+          <svg class="w-4 h-4 shrink-0 text-lemon" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.85l.5 3a1 1 0 01-.5 1.02L4.7 7.7a11 11 0 005.6 5.6l1.83-1.44a1 1 0 011.02-.5l3 .5a1 1 0 01.85.99V15a1 1 0 01-1 1h-1C7.7 16 2 10.3 2 4V3z"/></svg>
+          <a href="tel:+989184350833" dir="ltr">۰۹۱۸۴۳۵۰۸۳۳</a>
+        </li>
+        <li class="flex items-center gap-3 bg-ink/25 backdrop-blur-sm rounded-[1.4rem] px-4 py-2.5">
+          <svg class="w-4 h-4 shrink-0 text-lemon" fill="currentColor" viewBox="0 0 20 20"><path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v.3L10 10.5 2.5 5.8v-.3z"/><path d="M2.5 7.6V14.5A1.5 1.5 0 004 16h12a1.5 1.5 0 001.5-1.5V7.6l-7.1 4.4a.8.8 0 01-.8 0L2.5 7.6z"/></svg>
+          <a href="mailto:nesyourys@yahoo.com" dir="ltr" class="break-all">nesyourys@yahoo.com</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">اطلاعات فردی</span></h3>
+      <dl class="space-y-2.5 text-sm bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5">
+        <div class="flex justify-between"><dt class="text-white/80">سن</dt><dd class="font-bold" data-count="22">۲۲</dd></div>
+        <div class="flex justify-between"><dt class="text-white/80">وضعیت تأهل</dt><dd class="font-bold">مجرد</dd></div>
+        <div class="flex justify-between"><dt class="text-white/80">جنسیت</dt><dd class="font-bold">آقا</dd></div>
+        <div class="flex justify-between"><dt class="text-white/80">خدمت سربازی</dt><dd class="font-bold">معافیت تحصیلی</dd></div>
+      </dl>
+    </div>
+
+    <div class="relative">
+      <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">اطلاعات شغلی</span></h3>
+      <dl class="space-y-2.5 text-sm bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5">
+        <div class="flex justify-between gap-3"><dt class="text-white/80 shrink-0">وضعیت اشتغال</dt><dd class="font-bold text-left">در جستجوی فعال برای شغل جدید</dd></div>
+        <div class="flex justify-between"><dt class="text-white/80">نوع شغل</dt><dd class="font-bold">پاره‌وقت</dd></div>
+        <div class="pt-2">
+          <p class="text-white/80 mb-2">شهرهایی که در آن‌ها امکان کار دارم</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">اراک</span>
+            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">محلات</span>
+            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">تهران</span>
+          </div>
+        </div>
+      </dl>
+    </div>
+
+    <div class="relative">
+      <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">مهارت‌های نرم</span></h3>
+      <ul class="space-y-2.5 text-sm font-medium bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5" id="soft"></ul>
+    </div>
+
+    <div class="relative">
+      <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">زبان</span></h3>
+      <ul class="space-y-2.5 text-sm font-medium bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5" id="langs"></ul>
+    </div>
+
+    <p class="relative text-xs font-semibold text-ink pt-1">به‌روزرسانی: ۲۷ مهر ۱۴۰۵</p>
+  </aside>
+</main>
+
+<script>
+  const mainSkills = ['Power BI','MS Project','Excel','Python','SQL'];
+  const otherSkills = ['HTML','CSS','PHP','Laravel','JavaScript',
+    'Bootstrap 4','Git','Photoshop','WordPress','SQL Server','Visio','React'];
+  const tones = ['bg-azure/15 text-azure','bg-amber/60 text-ink','bg-rose/10 text-rose'];
+  document.getElementById('skills').innerHTML =
+    mainSkills.map(n => `<span class="px-5 py-2 rounded-full text-sm font-bold bg-rose text-white shadow-[0_8px_16px_-8px_rgba(44,94,173,.7)]" dir="ltr">${n}</span>`).join('') +
+    `<div class="w-full h-px bg-ink/10 my-2"></div>` +
+    otherSkills.map((n, i) => `<span class="px-5 py-2 rounded-full text-sm font-semibold ${tones[i % 3]}" dir="ltr">${n}</span>`).join('');
+
+  const dots = (on, total = 5) => `<span class="flex gap-1.5" dir="ltr">` +
+    Array.from({length: total}, (_, i) => `<i class="w-3 h-3 rounded-full ${i < on ? 'bg-lemon' : 'bg-white/30'}"></i>`).join('') + `</span>`;
+
+  const soft = [['شنونده خوب',5],['قدرت تصمیم‌گیری',5],['خودآگاهی',5],['تفکر کارآفرینی',5],
+    ['مدیریت تیم',4],['کار تیمی',4],['برنامه‌ریزی',4],['رهبری',4],['نوآوری',4],['مدیریت عملکرد',4]];
+  document.getElementById('soft').innerHTML = soft.map(([n,v]) =>
+    `<li class="flex items-center gap-2.5"><i class="w-1.5 h-1.5 shrink-0 rounded-full bg-lemon"></i><span>${n}</span></li>`).join('');
+
+  const langs = [['فارسی',5],['انگلیسی',4]];
+  document.getElementById('langs').innerHTML = langs.map(([n,v]) =>
+    `<li class="flex items-center gap-2.5"><i class="w-1.5 h-1.5 shrink-0 rounded-full bg-lemon"></i><span>${n}</span></li>`).join('');
+
+  // ---- Photo upload (resized, remembered in this browser) ----
+  const input = document.getElementById('photoInput');
+  const img = document.getElementById('avatarImg');
+  const initials = document.getElementById('avatarInitials');
+  const removeBtn = document.getElementById('photoRemove');
+  const KEY = 'resume_photo';
+
+  // Default profile photo
+  const DEFAULT_PHOTO = 'https://media.licdn.com/dms/image/v2/D4D03AQFhUK9-ovSvmw/profile-displayphoto-scale_400_400/B4DaFVnCYMH8Ag-/0/1792437661814?e=1793836800&v=beta&t=PnA5GllrrE3wW93_7A8gW-4agACKQFxYLy57SW7oUg0';
+
+  function showPhoto(src, isCustom = false) {
+    if (src) {
+      img.onerror = () => {
+        img.classList.add('hidden');
+        initials.classList.remove('hidden');
+        removeBtn.classList.add('hidden');
+        removeBtn.classList.remove('flex');
+      };
+      img.src = src;
+      img.classList.remove('hidden');
+      initials.classList.add('hidden');
+
+      if (isCustom) {
+        removeBtn.classList.remove('hidden');
+        removeBtn.classList.add('flex');
+      } else {
+        removeBtn.classList.add('hidden');
+        removeBtn.classList.remove('flex');
+      }
+    } else {
+      img.removeAttribute('src');
+      img.classList.add('hidden');
+      initials.classList.remove('hidden');
+      removeBtn.classList.add('hidden');
+      removeBtn.classList.remove('flex');
+    }
+  }
+
+  const savedPhoto = (() => {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  })();
+
+  showPhoto(savedPhoto || DEFAULT_PHOTO, !!savedPhoto);
+
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if (!file || !file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const im = new Image();
+      im.onload = () => {
+        const size = 400, c = document.createElement('canvas');
+        c.width = c.height = size;
+        const s = Math.min(im.width, im.height);
+        c.getContext('2d').drawImage(im, (im.width - s) / 2, (im.height - s) / 2, s, s, 0, 0, size, size);
+        const data = c.toDataURL('image/jpeg', 0.85);
+        showPhoto(data, true);
+        try { localStorage.setItem(KEY, data); } catch (e) {}
+      };
+      im.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+    input.value = '';
+  });
+
+  removeBtn.addEventListener('click', () => {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    showPhoto(DEFAULT_PHOTO, false);
+  });
+</script>
+
+<script>
+(function () {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const toFa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+  document.querySelectorAll('aside > div.relative').forEach((el, i) => {
+    el.classList.add('reveal', 'reveal-l');
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+  ['#skills > span', '#soft > li', '#langs > li', '.border-r-4 > div'].forEach(sel =>
+    document.querySelectorAll(sel).forEach((el, i) => { el.classList.add('pop'); el.style.setProperty('--i', i); }));
+  const countUp = el => {
+    const end = +el.dataset.count; if (reduce) return;
+    const t0 = performance.now(), dur = 1200;
+    const tick = t => { const k = Math.min((t - t0) / dur, 1); el.textContent = toFa(Math.round(end * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(tick); };
+    el.textContent = toFa(0); requestAnimationFrame(tick);
+  };
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduce) {
+    els.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in'); io.unobserve(e.target);
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+    }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  const bar = document.getElementById('progress');
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(scrollY / h, 1) : 0) + ')';
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if (!reduce && matchMedia('(hover:hover) and (min-width:768px)').matches) {
+    const blobs = [...document.querySelectorAll('.absolute[class*="blob"]')];
+    addEventListener('mousemove', e => {
+      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      blobs.forEach((b, i) => { const d = (i % 3 + 1) * 14; b.style.translate = (x * d) + 'px ' + (y * d) + 'px'; });
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
