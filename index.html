@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>رزومه یونس ابراهیمی</title>
-<script>document.documentElement.classList.add("js")</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
@@ -44,50 +43,6 @@
     * { -webkit-print-color-adjust:exact; print-color-adjust:exact; animation:none !important; }
   }
 
-  /* ================= ANIMATION LAYER ================= */
-  .js .reveal { opacity:0; transform: translateY(34px) scale(.98); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
-  .js .reveal-l { transform: translateX(-38px) scale(.98); }
-  .js .reveal.in { opacity:1; transform:none; }
-  .js .pop { opacity:0; transform: scale(.55) translateY(10px); }
-  .js .reveal.in .pop { opacity:1; transform:none; transition: opacity .5s, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: calc(var(--i,0) * 55ms + 250ms); }
-  .js .reveal.in .pop:hover { transform: translateY(-3px) scale(1.06); transition-delay:0s; }
-  .js .marker { background-repeat:no-repeat; background-position:right; background-size:0% 100%; transition: background-size .9s cubic-bezier(.2,.8,.2,1) .3s; }
-  .js .reveal.in .marker { background-size:100% 100%; }
-  @keyframes morph {
-    0%,100% { border-radius: 62% 38% 54% 46% / 48% 58% 42% 52%; }
-    33%     { border-radius: 40% 60% 48% 52% / 56% 44% 56% 44%; }
-    66%     { border-radius: 30% 70% 62% 38% / 55% 35% 65% 45%; }
-  }
-  .blob, .blob-2, .blob-3 { animation: morph 16s ease-in-out infinite; }
-  .blob.float, .blob-2.float, .blob-3.float   { animation: float 10s ease-in-out infinite, morph 16s ease-in-out infinite; }
-  .blob.float2, .blob-2.float2, .blob-3.float2 { animation: float 13s ease-in-out infinite reverse, morph 19s ease-in-out infinite; }
-  .absolute[class*="blob"] { transition: translate .6s cubic-bezier(.2,.8,.2,1); }
-  .card-o { transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
-  .card-o:hover { transform: translateY(-5px) rotate(-.4deg); box-shadow: 0 22px 40px -22px rgba(21,145,220,.55); }
-  .live-dot { display:inline-block; width:.55rem; height:.55rem; margin-inline-end:.45rem; border-radius:9999px; background:#1591DC; animation: ping-dot 1.8s ease-out infinite; }
-  @keyframes ping-dot { 0% { box-shadow:0 0 0 0 rgba(21,145,220,.6); } 100% { box-shadow:0 0 0 .6rem rgba(21,145,220,0); } }
-  .leaf path:first-child { stroke-dasharray:180; stroke-dashoffset:180; animation: draw 2.2s .5s ease-out forwards; }
-  .leaf g path { transform-box: fill-box; transform-origin: 0% 100%; transform: scale(0); animation: grow .8s cubic-bezier(.34,1.56,.64,1) forwards; }
-  .leaf g path:nth-child(1) { animation-delay:1.0s; } .leaf g path:nth-child(2) { animation-delay:1.3s; }
-  .leaf g path:nth-child(3) { animation-delay:1.6s; } .leaf g path:nth-child(4) { animation-delay:1.9s; }
-  @keyframes draw { to { stroke-dashoffset:0; } }
-  @keyframes grow { to { transform: scale(1); } }
-  label[for="photoInput"] { transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
-  label[for="photoInput"]:hover { transform: rotate(-6deg) scale(1.06); }
-  #progress { transform: scaleX(0); transform-origin: right; background: linear-gradient(270deg,#1591DC,#4BB8FA,#C4E2F5); }
-  @media (prefers-reduced-motion: reduce) {
-    .js .reveal, .js .pop { opacity:1 !important; transform:none !important; transition:none !important; }
-    .js .marker { background-size:100% 100% !important; }
-    *, *::before, *::after { animation:none !important; }
-    .leaf path:first-child { stroke-dashoffset:0; } .leaf g path { transform:none; }
-  }
-  @media print {
-    .js .reveal, .js .pop { opacity:1 !important; transform:none !important; }
-    .js .marker { background-size:100% 100% !important; }
-    .leaf path:first-child { stroke-dashoffset:0 !important; } .leaf g path { transform:none !important; }
-    .card-o:hover { transform:none; }
-  }
-
   /* ================= 3D SHAPES ================= */
   .absolute.blob, .absolute.blob-2, .absolute.blob-3,
   div.blob, div.blob-2, div.blob-3 {
@@ -103,8 +58,8 @@
   .absolute.blob.bg-amber\/40   { background-color: rgba(75,184,250,.55); }
 
   /* avatar becomes a glossy 3D pebble */
-  label[for="photoInput"] { box-shadow: inset -8px -10px 18px rgba(20,40,75,.35), inset 6px 8px 14px rgba(255,255,255,.6), 0 24px 30px -14px rgba(20,40,75,.55); }
-  label[for="photoInput"] > span { box-shadow: inset 0 6px 14px rgba(0,0,0,.45), inset 0 -4px 10px rgba(255,255,255,.12); }
+  #avatarWrap { box-shadow: inset -8px -10px 18px rgba(20,40,75,.35), inset 6px 8px 14px rgba(255,255,255,.6), 0 24px 30px -14px rgba(20,40,75,.55); }
+  #avatarWrap > span { box-shadow: inset 0 6px 14px rgba(0,0,0,.45), inset 0 -4px 10px rgba(255,255,255,.12); }
 
   .leaf { filter: drop-shadow(3px 6px 4px rgba(20,40,75,.28)); }
 
@@ -116,10 +71,61 @@
   @media print {
     .absolute.blob, .absolute.blob-2, .absolute.blob-3, div.blob, div.blob-2, div.blob-3 { box-shadow:none; }
   }
+
+  /* ================= HOVER + LIGHT MOTION (transform/opacity only = fast) ================= */
+  .card-o, #skills span, .sheet span[class*="rounded-full"], aside li, aside dl, #avatarWrap, .no-print {
+    transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, border-color .25s ease, background-color .2s ease, color .2s ease;
+  }
+  @media (hover:hover) {
+    main .card-o.border-2:hover { transform: translateY(-4px); border-color: #1591DC; box-shadow: 0 18px 32px -18px rgba(21,145,220,.55); }
+    #skills span:hover, .sheet section span[class*="border-azure"]:hover { transform: translateY(-3px) scale(1.06); }
+    #skills span:hover, .sheet section span[class*="border-azure"]:hover { box-shadow: 0 10px 18px -10px rgba(44,94,173,.6); }
+    .sheet section span[class*="border-azure"]:hover { background-color: #1591DC; color: #fff; }
+    aside li:hover { transform: translateY(-2px); background-color: rgba(20,40,75,.4); }
+    aside dl:hover { background-color: rgba(20,40,75,.35); }
+    aside span.bg-amber:hover { transform: translateY(-2px) scale(1.08); }
+    #avatarWrap:hover { transform: scale(1.05) rotate(-3deg); }
+    .no-print:hover { transform: scale(1.06); }
+    .marker { transition: background-size .3s ease; }
+  }
+
+  /* skill chips pop in one after another (short, runs once) */
+  #skills > span { animation: pop .45s cubic-bezier(.2,.9,.3,1.3) backwards; }
+  #skills > span:nth-child(1){animation-delay:.35s} #skills > span:nth-child(2){animation-delay:.4s}
+  #skills > span:nth-child(3){animation-delay:.45s} #skills > span:nth-child(4){animation-delay:.5s}
+  #skills > span:nth-child(5){animation-delay:.55s} #skills > span:nth-child(6){animation-delay:.6s}
+  #skills > span:nth-child(n+8){animation-delay:.7s}
+  @keyframes pop { from { opacity:0; transform: scale(.85) translateY(6px); } to { opacity:1; transform:none; } }
+
+  /* soft skills + languages: spotlight row, glowing dot, nudge text */
+  #soft, #langs { transition: transform .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease, box-shadow .25s ease; }
+  #soft li, #langs li { position: relative; isolation: isolate; cursor: default; }
+  #soft li::before, #langs li::before {
+    content: ""; position: absolute; inset: -.32rem -.7rem; z-index: -1; border-radius: 1rem;
+    background: linear-gradient(90deg, rgba(196,226,245,.22), rgba(196,226,245,.08));
+    opacity: 0; transform: scale(.94);
+    transition: opacity .2s ease, transform .25s cubic-bezier(.2,.8,.2,1);
+  }
+  #soft li > span, #langs li > span { transition: transform .25s cubic-bezier(.2,.8,.2,1), color .2s ease; }
+  #soft li > i, #langs li > i { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease; }
+  @media (hover:hover) {
+    #soft:hover, #langs:hover { background-color: rgba(20,40,75,.35); box-shadow: 0 14px 26px -16px rgba(20,40,75,.55); transform: translateY(-2px); }
+    #soft li:hover, #langs li:hover { transform: none; background-color: transparent; }
+    #soft li:hover::before, #langs li:hover::before { opacity: 1; transform: scale(1); }
+    #soft li:hover > span, #langs li:hover > span { color: #C4E2F5; transform: translateX(-5px); }
+    #soft li:hover > i, #langs li:hover > i { transform: scale(2); box-shadow: 0 0 0 3px rgba(196,226,245,.28); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
 </style>
 </head>
 <body class="bg-mist text-ink antialiased min-h-screen">
-<div id="progress" class="no-print fixed top-0 right-0 h-1 w-full z-[60]"></div>
+
+<button onclick="window.print()" class="no-print fixed top-3 left-3 md:top-4 md:left-4 z-50 bg-rose hover:brightness-110 text-white text-xs md:text-sm font-semibold px-3.5 py-1.5 md:px-5 md:py-2.5 rounded-full shadow-lg transition">
+  ذخیره / چاپ PDF
+</button>
 
 <main class="sheet shadow-o max-w-5xl mx-auto my-0 sm:my-8 bg-white rounded-none sm:rounded-[2.8rem] overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_320px]">
 
@@ -130,7 +136,7 @@
     <div class="absolute -bottom-16 right-10 w-44 h-44 bg-rose/10 blob-3"></div>
 
     <!-- botanical line decoration -->
-    <svg class="hidden sm:block absolute top-8 left-8 w-24 opacity-25 float2 leaf" viewBox="0 0 120 160" aria-hidden="true">
+    <svg class="hidden sm:block absolute top-8 left-8 w-24 opacity-25 float2" viewBox="0 0 120 160" aria-hidden="true">
       <path d="M60 156 C57 110 70 70 62 8" fill="none" stroke="#2C5EAD" stroke-width="3" stroke-linecap="round"/>
       <g fill="#1591DC">
         <path d="M60 122 C30 117 18 97 14 80 C38 82 56 96 60 122Z"/>
@@ -140,16 +146,16 @@
       </g>
     </svg>
 
-    <header class="relative reveal hidden md:block">
+    <header class="relative rise hidden md:block">
       <div class="flex flex-wrap gap-2 mb-4 text-sm font-semibold">
-        <span class="px-4 py-1.5 rounded-full bg-lemon text-ink"><i class="live-dot"></i>در جستجوی فعال برای شغل</span>
+        <span class="px-4 py-1.5 rounded-full bg-lemon text-ink">● در جستجوی فعال برای شغل</span>
         <span class="px-4 py-1.5 rounded-full bg-amber text-ink">همکاری پاره‌وقت</span>
       </div>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">یونس ابراهیمی</h1>
-      <p class="mt-3 text-xl md:text-2xl font-bold text-azure"> مهندس صنایع · تحلیلگر داده و کنترل پروژه <span class="text-rose">·</span> </p>
+      <p class="mt-3 text-xl md:text-2xl font-bold text-azure">مهندس صنایع <span class="text-rose">·</span> تحلیلگر داده</p>
     </header>
 
-    <div class="relative reveal" style="transition-delay:.08s">
+    <div class="relative rise" style="animation-delay:.08s">
       <h2 class="text-xl font-extrabold mb-3"><span class="marker">درباره من</span></h2>
       <div class="leading-8 text-ink/80 bg-azure/[.07] card-o p-6 space-y-3">
         <p>
@@ -161,7 +167,7 @@
       </div>
     </div>
 
-    <div class="relative reveal" style="transition-delay:.16s">
+    <div class="relative rise" style="animation-delay:.16s">
       <h2 class="text-xl font-extrabold mb-4"><span class="marker">سوابق شغلی</span></h2>
       <div class="bg-white card-o p-6 border-2 border-ink/10 shadow-[0_14px_30px_-16px_rgba(44,94,173,.5)]">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
@@ -195,7 +201,7 @@
       </div>
     </div>
 
-    <div class="relative reveal" style="transition-delay:.24s">
+    <div class="relative rise" style="animation-delay:.24s">
       <h2 class="text-xl font-extrabold mb-4"><span class="marker">تحصیلات</span></h2>
       <div class="space-y-4">
         <div class="flex gap-4 bg-white card-o p-6 border-2 border-ink/10">
@@ -216,18 +222,17 @@
               <span class="text-sm font-semibold text-azure">مهر ۱۳۸۹ تا دی ۱۴۰۱</span>
             </div>
             <p class="text-ink/70 mt-1">دیپلم · دبیرستان شهید بهشتی اراک، دوره دوم · اراک</p>
-            <span class="inline-block mt-2 px-3 py-0.5 rounded-full bg-lemon text-xs font-bold">معدل ۱۵</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="relative reveal" style="transition-delay:.32s">
+    <div class="relative rise" style="animation-delay:.32s">
       <h2 class="text-xl font-extrabold mb-4"><span class="marker">مهارت‌های فنی</span></h2>
       <div class="flex flex-wrap gap-2.5" id="skills"></div>
     </div>
 
-    <div class="relative reveal" style="transition-delay:.4s">
+    <div class="relative rise" style="animation-delay:.4s">
       <h2 class="text-xl font-extrabold mb-4"><span class="marker">تکنولوژی‌های مورد علاقه برای کار</span></h2>
       <div class="flex flex-wrap gap-2.5" dir="ltr">
         <span class="px-5 py-2 rounded-full border-2 border-azure text-azure font-bold text-sm">MS Project</span>
@@ -238,7 +243,7 @@
       </div>
     </div>
 
-    <div class="relative reveal" style="transition-delay:.48s">
+    <div class="relative rise" style="animation-delay:.48s">
       <h2 class="text-xl font-extrabold mb-4"><span class="marker">پروژه‌ها</span></h2>
       <div class="space-y-4">
 
@@ -287,25 +292,19 @@
     <!-- Avatar -->
     <div class="relative flex items-center gap-4 md:gap-0 md:justify-center md:pt-4">
       <div class="relative shrink-0">
-        <label for="photoInput" title="آپلود عکس" class="group block w-24 h-24 md:w-40 md:h-40 blob bg-gradient-to-br from-rose via-amber to-lemon p-1.5 shadow-xl cursor-pointer">
+        <div id="avatarWrap" class="block w-24 h-24 md:w-40 md:h-40 blob bg-gradient-to-br from-rose via-amber to-lemon p-1.5 shadow-xl">
           <span class="relative block w-full h-full blob bg-ink overflow-hidden">
             <span id="avatarInitials" class="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl font-extrabold text-lemon">ی‌ا</span>
-            <img id="avatarImg" alt="عکس پروفایل" class="hidden absolute inset-0 w-full h-full object-cover" href="https://media.licdn.com/dms/image/v2/D4D03AQFfnRLITlBQEQ/profile-displayphoto-scale_400_400/B4DaFa2QWHJ8Ag-/0/1792525536454?e=1794441600&v=beta&t=jz4T_3msIssbZeBeI5-Iysfty3ETeRpkgefsGARwvjI">
-            <span class="no-print absolute inset-0 flex flex-col items-center justify-center gap-1 bg-ink/60 text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h1.5l1.2-2h8.6l1.2 2H19a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3.5"/></svg>
-              آپلود عکس
-            </span>
+            <img id="avatarImg" src="https://media.licdn.com/dms/image/v2/D4D03AQFfnRLITlBQEQ/profile-displayphoto-scale_400_400/B4DaFa2QWHJ8Ag-/0/1792525536454?e=1795046400&v=beta&t=jjpEnsiGy8txNRIV48fGVGCyLqsoDhtaSfuA-r0ciSo" alt="عکس پروفایل" onerror="this.classList.add('hidden')" class="absolute inset-0 w-full h-full object-cover">
           </span>
-        </label>
-        <input id="photoInput" type="file" accept="image/*" class="hidden">
-        <button id="photoRemove" type="button" title="حذف عکس" class="no-print hidden absolute bottom-1 left-1 w-8 h-8 rounded-full bg-white text-rose text-sm font-bold items-center justify-center shadow-md hover:scale-105 transition">✕</button>
+        </div>
       </div>
 
       <!-- Name (mobile only, sits right next to the photo) -->
       <div class="md:hidden relative min-w-0 flex-1">
         <h1 class="text-2xl font-extrabold leading-tight">یونس ابراهیمی</h1>
-        <p class="mt-1 text-sm font-bold text-lemon">مهندس صنایع · برنامه‌نویس</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-lemon text-ink text-xs font-bold"><i class="live-dot"></i>در جستجوی فعال برای شغل</span>
+        <p class="mt-1 text-sm font-bold text-lemon">مهندس صنایع · تحلیلگر داده</p>
+        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-lemon text-ink text-xs font-bold">● در جستجوی فعال برای شغل</span>
       </div>
     </div>
 
@@ -324,13 +323,17 @@
           <svg class="w-4 h-4 shrink-0 text-lemon" fill="currentColor" viewBox="0 0 20 20"><path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v.3L10 10.5 2.5 5.8v-.3z"/><path d="M2.5 7.6V14.5A1.5 1.5 0 004 16h12a1.5 1.5 0 001.5-1.5V7.6l-7.1 4.4a.8.8 0 01-.8 0L2.5 7.6z"/></svg>
           <a href="mailto:nesyourys@yahoo.com" dir="ltr" class="break-all">nesyourys@yahoo.com</a>
         </li>
+        <li class="flex items-center gap-3 bg-ink/25 backdrop-blur-sm rounded-[1.4rem] px-4 py-2.5">
+          <svg class="w-4 h-4 shrink-0 text-lemon" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <a href="https://www.linkedin.com/in/nesyou/" target="_blank" rel="noopener" dir="ltr" class="break-all">linkedin.com/in/nesyou</a>
+        </li>
       </ul>
     </div>
 
     <div class="relative">
       <h3 class="text-lg font-extrabold mb-3 text-ink"><span class="bg-lemon px-2.5 py-0.5 rounded-lg">اطلاعات فردی</span></h3>
       <dl class="space-y-2.5 text-sm bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5">
-        <div class="flex justify-between"><dt class="text-white/80">سن</dt><dd class="font-bold" data-count="22">۲۲</dd></div>
+        <div class="flex justify-between"><dt class="text-white/80">سن</dt><dd class="font-bold">۲۲</dd></div>
         <div class="flex justify-between"><dt class="text-white/80">وضعیت تأهل</dt><dd class="font-bold">مجرد</dd></div>
         <div class="flex justify-between"><dt class="text-white/80">جنسیت</dt><dd class="font-bold">آقا</dd></div>
         <div class="flex justify-between"><dt class="text-white/80">خدمت سربازی</dt><dd class="font-bold">معافیت تحصیلی</dd></div>
@@ -342,14 +345,6 @@
       <dl class="space-y-2.5 text-sm bg-ink/25 backdrop-blur-sm rounded-[1.8rem] p-5">
         <div class="flex justify-between gap-3"><dt class="text-white/80 shrink-0">وضعیت اشتغال</dt><dd class="font-bold text-left">در جستجوی فعال برای شغل جدید</dd></div>
         <div class="flex justify-between"><dt class="text-white/80">نوع شغل</dt><dd class="font-bold">پاره‌وقت</dd></div>
-        <div class="pt-2">
-          <p class="text-white/80 mb-2">شهرهایی که در آن‌ها امکان کار دارم</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">اراک</span>
-            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">محلات</span>
-            <span class="px-3.5 py-1 rounded-full bg-amber text-ink text-xs font-bold">تهران</span>
-          </div>
-        </div>
       </dl>
     </div>
 
@@ -368,7 +363,7 @@
 </main>
 
 <script>
-  const mainSkills = ['Power BI','MS Project','Excel','Python','SQL'];
+  const mainSkills = ['Power BI','DAX','MS Project','Excel','Python','SQL'];
   const otherSkills = ['HTML','CSS','PHP','Laravel','JavaScript',
     'Bootstrap 4','Git','Photoshop','WordPress','SQL Server','Visio','React'];
   const tones = ['bg-azure/15 text-azure','bg-amber/60 text-ink','bg-rose/10 text-rose'];
@@ -388,119 +383,6 @@
   const langs = [['فارسی',5],['انگلیسی',4]];
   document.getElementById('langs').innerHTML = langs.map(([n,v]) =>
     `<li class="flex items-center gap-2.5"><i class="w-1.5 h-1.5 shrink-0 rounded-full bg-lemon"></i><span>${n}</span></li>`).join('');
-
-  // ---- Photo upload (resized, remembered in this browser) ----
-  const input = document.getElementById('photoInput');
-  const img = document.getElementById('avatarImg');
-  const initials = document.getElementById('avatarInitials');
-  const removeBtn = document.getElementById('photoRemove');
-  const KEY = 'resume_photo';
-
-  // Default profile photo
-  const DEFAULT_PHOTO = 'https://media.licdn.com/dms/image/v2/D4D03AQFhUK9-ovSvmw/profile-displayphoto-scale_400_400/B4DaFVnCYMH8Ag-/0/1792437661814?e=1793836800&v=beta&t=PnA5GllrrE3wW93_7A8gW-4agACKQFxYLy57SW7oUg0';
-
-  function showPhoto(src, isCustom = false) {
-    if (src) {
-      img.onerror = () => {
-        img.classList.add('hidden');
-        initials.classList.remove('hidden');
-        removeBtn.classList.add('hidden');
-        removeBtn.classList.remove('flex');
-      };
-      img.src = src;
-      img.classList.remove('hidden');
-      initials.classList.add('hidden');
-
-      if (isCustom) {
-        removeBtn.classList.remove('hidden');
-        removeBtn.classList.add('flex');
-      } else {
-        removeBtn.classList.add('hidden');
-        removeBtn.classList.remove('flex');
-      }
-    } else {
-      img.removeAttribute('src');
-      img.classList.add('hidden');
-      initials.classList.remove('hidden');
-      removeBtn.classList.add('hidden');
-      removeBtn.classList.remove('flex');
-    }
-  }
-
-  const savedPhoto = (() => {
-    try { return localStorage.getItem(KEY); } catch (e) { return null; }
-  })();
-
-  showPhoto(savedPhoto || DEFAULT_PHOTO, !!savedPhoto);
-
-  input.addEventListener('change', () => {
-    const file = input.files && input.files[0];
-    if (!file || !file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      const im = new Image();
-      im.onload = () => {
-        const size = 400, c = document.createElement('canvas');
-        c.width = c.height = size;
-        const s = Math.min(im.width, im.height);
-        c.getContext('2d').drawImage(im, (im.width - s) / 2, (im.height - s) / 2, s, s, 0, 0, size, size);
-        const data = c.toDataURL('image/jpeg', 0.85);
-        showPhoto(data, true);
-        try { localStorage.setItem(KEY, data); } catch (e) {}
-      };
-      im.src = reader.result;
-    };
-    reader.readAsDataURL(file);
-    input.value = '';
-  });
-
-  removeBtn.addEventListener('click', () => {
-    try { localStorage.removeItem(KEY); } catch (e) {}
-    showPhoto(DEFAULT_PHOTO, false);
-  });
-</script>
-
-<script>
-(function () {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const toFa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
-  document.querySelectorAll('aside > div.relative').forEach((el, i) => {
-    el.classList.add('reveal', 'reveal-l');
-    el.style.transitionDelay = (i * 0.08) + 's';
-  });
-  ['#skills > span', '#soft > li', '#langs > li', '.border-r-4 > div'].forEach(sel =>
-    document.querySelectorAll(sel).forEach((el, i) => { el.classList.add('pop'); el.style.setProperty('--i', i); }));
-  const countUp = el => {
-    const end = +el.dataset.count; if (reduce) return;
-    const t0 = performance.now(), dur = 1200;
-    const tick = t => { const k = Math.min((t - t0) / dur, 1); el.textContent = toFa(Math.round(end * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(tick); };
-    el.textContent = toFa(0); requestAnimationFrame(tick);
-  };
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || reduce) {
-    els.forEach(el => el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver(entries => entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in'); io.unobserve(e.target);
-      e.target.querySelectorAll('[data-count]').forEach(countUp);
-    }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
-    els.forEach(el => io.observe(el));
-  }
-  const bar = document.getElementById('progress');
-  const onScroll = () => {
-    const h = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(scrollY / h, 1) : 0) + ')';
-  };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  if (!reduce && matchMedia('(hover:hover) and (min-width:768px)').matches) {
-    const blobs = [...document.querySelectorAll('.absolute[class*="blob"]')];
-    addEventListener('mousemove', e => {
-      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
-      blobs.forEach((b, i) => { const d = (i % 3 + 1) * 14; b.style.translate = (x * d) + 'px ' + (y * d) + 'px'; });
-    }, { passive: true });
-  }
-})();
 </script>
 </body>
 </html>
